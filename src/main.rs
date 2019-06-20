@@ -19,7 +19,7 @@ pub struct AppState {
 }
 
 fn main() -> std::io::Result<()> {
-    std::env::set_var("RUST_LOG", "info,actix_web=info");
+    // std::env::set_var("RUST_LOG", "info,actix_web=info");
     env_logger::init();
 
     let config = config::Config::new("config.toml").expect("Failed to open config file.");
