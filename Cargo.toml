@@ -1,0 +1,17 @@
+[package]
+name = "wwd-actix"
+version = "0.1.0"
+authors = ["Rob Parrett <robparrett@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+actix-web = "1.0"
+actix-files = "0.1"
+askama = "0.8"
+reqwest = "0.8"
+darksky = { version = "0.8", features = ["reqwest"] }
+toml = "0.5"
+serde = { version = "1.0", features = ["derive"] }
+chrono = "0.4"
+log = "0.4.0"
+env_logger = "0.6"
