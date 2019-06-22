@@ -114,13 +114,21 @@ pub struct BasicWeather {
 }
 
 pub fn get_forecast(secret: String, lat: f64, long: f64) -> Result<Vec<BasicWeather>, String> {
-    let client = Client::builder()
-        .build()
-        .or_else(|e| Err(format!("{} ({})", "Failed to build client".to_string(), e.to_string())))?;
+    let client = Client::builder().build().or_else(|e| {
+        Err(format!(
+            "{} ({})",
+            "Failed to build client".to_string(),
+            e.to_string()
+        ))
+    })?;
 
-    let req = client
-        .get_forecast(&secret, lat, long)
-        .or_else(|e| Err(format!("{} ({})", "Request failed".to_string(), e.to_string())))?;
+    let req = client.get_forecast(&secret, lat, long).or_else(|e| {
+        Err(format!(
+            "{} ({})",
+            "Request failed".to_string(),
+            e.to_string()
+        ))
+    })?;
 
     let mut weathers = Vec::new();
 
