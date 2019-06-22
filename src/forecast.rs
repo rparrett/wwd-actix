@@ -120,7 +120,7 @@ pub fn get_forecast(secret: String, lat: f64, long: f64) -> Result<Vec<BasicWeat
 
     let req = client
         .get_forecast(&secret, lat, long)
-        .or_else(|_| Err("Request failed".to_string()))?;
+        .or_else(|e| Err(format!("{} ({})", "Request failed".to_string(), e.to_string())))?;
 
     let mut weathers = Vec::new();
 
