@@ -114,7 +114,7 @@ pub struct BasicWeather {
 }
 
 pub fn get_forecast(secret: String, lat: f64, long: f64) -> Result<Vec<BasicWeather>, String> {
-    let client = reqwest::Client::builder()
+    let client = Client::builder()
         .build()
         .or_else(|e| Err(format!("{} ({})", "Failed to build client".to_string(), e.to_string())))?;
 
