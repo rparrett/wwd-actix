@@ -8,8 +8,8 @@ edition = "2018"
 actix-web = "1.0"
 actix-files = "0.1"
 askama = "0.8"
-reqwest = "0.8"
-darksky = { version = "0.8", features = ["reqwest"] }
+reqwest = "0.9.1"
+darksky = { git = "https://github.com/rusty-crates/darksky.rs.git", rev = "fb9a9d60ab07760176cbb4c9ff6b9f1c95932ec8", features = ["reqwest"] }
 toml = "0.5"
 serde = { version = "1.0", features = ["derive"] }
 chrono = "0.4"
